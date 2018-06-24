@@ -7,10 +7,10 @@ type
     precioDeVenta:integer;
   end;
   productosEnVenta=array [1..10] of producto;
+  ganancias=array [1..30]of integer;
   sucursal:record
     cod:integer;
     prod:productosEnVenta;
-    
   end;
 begin
 end.
