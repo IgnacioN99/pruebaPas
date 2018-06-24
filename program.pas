@@ -1,5 +1,5 @@
 program prueba;
 type
-    hola:integer;
+hola:integer;{te equivocaste salame}
 begin
 end.
