@@ -63,6 +63,9 @@ begin
   end;
   codPar:=aux MOD 2=0;
 end;
-procedure Gananciasxd()
+procedure Gananciasxd();
+begin
+
+end;
 begin
 end.
