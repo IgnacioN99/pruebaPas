@@ -63,6 +63,16 @@ begin
   end;
   codPar:=aux MOD 2=0;
 end;
-procedure Gananciasxd()
+procedure Gananciasxd(var g:ganancias,s:sucursal);
+var
+  i:integer;
+  ganancia:real;
+begin
+  for i := 1 to 10 do begin
+    ganancia:=(s.prod[i].precioDeVenta-s.prod[i].costo)*s.prod[i].cantVendida;
+    
+  end;
+
+end;
 begin
 end.
