@@ -70,7 +70,7 @@ var
 begin
   for i := 1 to 10 do begin
     ganancia:=(s.prod[i].precioDeVenta-s.prod[i].costo)*s.prod[i].cantVendida;
-    
+    g[s.prod[i]]:=g[s.prod[i]]+ganancia;
   end;
 
 end;
