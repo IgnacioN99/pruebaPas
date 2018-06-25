@@ -19,7 +19,7 @@ Enunciado:
 >       depende de la cantidad de productos venvidos y la diferencia entre el precio de venta y el 
 >       costo del mismo.
 
->       d. Informar el nombre y la gaacioa del producto que mayor ganancia obtuvo.
+>       d. Informar el nombre y la ganancia del producto que mayor ganancia obtuvo.
 `Nota: modularice adecuadamente y libere la memoria de las estructuras dinamicas.`
 
 
