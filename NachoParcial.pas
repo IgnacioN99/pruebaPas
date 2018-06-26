@@ -20,6 +20,7 @@ type
 {Se dispone de la estructura para acceder al nombre}
   nombre=string[100];
   estructura=array[1..30] of nombre;
+procedure estrcuraQueSeDispone(e:estructura;cod:integer;var n:nombre);
 procedure agregarALaLista(var l:lista;datos:sucursal)
 var
   aux:lista;
@@ -72,8 +73,63 @@ begin
     ganancia:=(s.prod[i].precioDeVenta-s.prod[i].costo)*s.prod[i].cantVendida;
     g[s.prod[i]]:=g[s.prod[i]]+ganancia;
   end;
-
 end;
+procedure creadorLista(var l:lista);
+var
+  s:sucursal;
 begin
-  {Principal PRogram puto}
+  read(s.codigo);
+  while s.codigo <> 0 do begin
+    EnVenta(s.prod);
+    agregarALaLista(l,s);
+    read(s.codigo);
+  end;
+end;
+procedure maxGanancia(g:ganancia;var n:nombre;e:estructura);
+var
+  i,m:integer;
+  max:real;
+begin
+  for i:=1 to 30 do begin
+     if(max<g[i])then begin
+       m:=i;
+       max:=g[i];
+    end;
+    estrcuraQueSeDispone(e,m,n);
+  end;
+end;
+procedure inicializar(var g:ganancia);
+var
+  i:integer;
+begin
+  for i:=1 to 30 do begin
+    g[i]:=0;
+  end;
+end;
+procedure recorridoLista(l:lista;var g:ganancias);
+var
+  aux:boolean
+begin
+  while l<> nil do begin
+    aux:=codPar(l^.cod);{punto b}
+    if (aux) then
+      writeln(l^.cod, 'la suma de sus digitos es par');
+    Gananciasxd(g,l^.datos);{punto c}
+    l:=l^.sig;
+  end;
+end;
+var
+  l:lista;
+  g:ganancias;
+  n:nombre;
+  e:estructura;
+begin
+  l:=nil;
+  inicializar(g);
+  creadorLista(l);{Punto a}
+  recorridoLista(l,g);{Con una sola recorrida papu}
+  maxGanancia(g,n,e);{punto d}
+  writeln('el producto con mayor ganancia es: ',n);
+  CleanMemory(l);
+  {TERMINE PUTOS, porque no me salio asi en el parcial t.t}
 end.
